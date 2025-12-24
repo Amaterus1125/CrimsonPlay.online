@@ -41,7 +41,7 @@ export default function BackgroundVideo() {
     }
   }, [videoSrc]);
 
-  /* parallax with smooth scroll - PRESERVED EXACT LOGIC */
+  /* parallax with smooth scroll  */
   useEffect(() => {
     let currentY = 0;
     let targetY = 0;
@@ -81,7 +81,7 @@ export default function BackgroundVideo() {
     updateParallax();
   }, []);
 
-  /* scroll reveal - PRESERVED EXACT LOGIC */
+  /* scroll reveal  */
   useEffect(() => {
     const revealElements = document.querySelectorAll(".reveal");
 
@@ -103,7 +103,7 @@ export default function BackgroundVideo() {
     <div className="relative w-full overflow-x-hidden bg-[#090d14]">
       <Navbar />
 
-      {/* Hero Section */}
+      {/* hero Section */}
       <div className="relative h-screen w-full overflow-hidden">
         <video
           ref={videoRef}
@@ -140,7 +140,7 @@ export default function BackgroundVideo() {
               CHOOSE SMARTER
             </h2>
 
-            {/* Play Button */}
+            {/* pplay Button */}
             <div ref={ctaRef} className="mt-10 md:mt-14">
               <button
                 aria-label="Play Now"
@@ -163,7 +163,7 @@ export default function BackgroundVideo() {
         </div>
       </div>
 
-      {/* Main Sections */}
+      {/* main Sections */}
       <div className="relative w-full min-h-[140vh]">
         <video
           src="/pagebg.mp4"
@@ -176,15 +176,15 @@ export default function BackgroundVideo() {
 
         <div className="absolute top-0 left-0 w-full h-full bg-[#090d14]/40 z-[2]" />
 
-        {/* Content Container */}
+        {/* content container the mian one */}
         <main className="relative z-[3] px-6 py-20 md:p-20 text-white valorant-font space-y-24 md:space-y-32">
           
-          {/* Section 1 */}
+          {/* section  */}
           <section
             ref={contentRef}
             className="w-full flex flex-col lg:flex-row items-center justify-center gap-10 md:gap-16 reveal opacity-0 translate-y-10 transition-all duration-1000"
           >
-            {/* Box width changed from fixed 70% to full/fluid */}
+            {/* for mobile */}
             <div className="w-full lg:w-[65%] bg-white/5 backdrop-blur-xl border border-[#ff004c] rounded-3xl shadow-[0_0_25px_#ff004c80] p-6 md:p-10">
               <h2 className="text-2xl md:text-3xl mb-4 text-[#ff004c]">PURPOSE</h2>
               <div className="space-y-4 text-sm md:text-base opacity-80 leading-relaxed">
@@ -228,4 +228,5 @@ export default function BackgroundVideo() {
       <Footer />
     </div>
   );
+
 }
