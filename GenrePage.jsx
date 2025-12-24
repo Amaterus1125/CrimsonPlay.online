@@ -14,9 +14,7 @@ export default function GenrePage() {
   // currently selected genres from URL
   const selectedGenres = genre.split(",");
 
-  // ---------------------------------------------
-  // load all games
-  // ---------------------------------------------
+// load all games
   useEffect(() => {
     fetch("/api/games")
       .then((res) => res.json())
@@ -29,9 +27,9 @@ export default function GenrePage() {
       });
   }, []);
 
-  // ---------------------------------------------
+
   // apply filtering when genre from URL changes
-  // ---------------------------------------------
+
   useEffect(() => {
     if (allGames.length === 0) return;
 
@@ -42,9 +40,9 @@ export default function GenrePage() {
     setFiltered(matches);
   }, [genre, allGames]);
 
-  // ---------------------------------------------
+
   // handle clicking a genre radio button
-  // ---------------------------------------------
+  
   const handleGenreClick = (g) => {
     // update URL to /genres/<genre>
     navigate(`/genres/${g}`);
@@ -65,41 +63,7 @@ export default function GenrePage() {
           Select a Genre
         </h2>
 
-        {/* ---------------------------------------------
-            NEW: Genre Selector Buttons
-           --------------------------------------------- */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16 max-w-4xl">
-
-          {allGenres.map((g) => {
-            const active = selectedGenres.includes(g);
-
-            return (
-              <button
-                key={g}
-                onClick={() => handleGenreClick(g)}
-                className={`
-                  px-5 py-2 rounded-xl
-                  border-2 
-                  valorant-font tracking-wide
-                  transition-all duration-300
-                  ${
-                    active
-                      ? "border-red-500 text-red-400 shadow-[0_0_12px_rgba(255,0,0,0.8)]"
-                      : "border-red-700 text-red-600 hover:text-red-400 hover:border-red-500"
-                  }
-                `}
-              >
-                {g}
-              </button>
-            );
-          })}
-        </div>
-
-        <h2 className="text-3xl valorant-font mb-12 text-red-400 drop-shadow-[0_0_10px_#ff0000]">
-          Matching Games
-        </h2>
-
-        {/* steamdb link cards */}
+      
         {filtered.length > 0 ? (
           <div className="flex flex-col gap-8 w-full max-w-5xl">
 
@@ -156,3 +120,4 @@ export default function GenrePage() {
     </div>
   );
 }
+
