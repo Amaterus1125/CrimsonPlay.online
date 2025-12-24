@@ -3,13 +3,13 @@ import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-// ✅ The Direct API Link for your new Docker Space
+// api link for docker space in hugging face spaces
 const API_URL = "https://amaterus-gamify-2.hf.space/recommend";
 
 export default function GameDetails() {
   const { name } = useParams();
 
-  // Convert URL encoded game name
+  // convert the url encoded game name
   const displayName = decodeURIComponent(name);
 
   const [recommended, setRecommended] = useState([]);
@@ -30,7 +30,7 @@ export default function GameDetails() {
         return res.json();
       })
       .then((data) => {
-        // ✅ Updated to match the FastAPI response format: { recommendations: [...] }
+        // to match fastapi recommendations
         if (data && Array.isArray(data.recommendations)) {
           setRecommended(data.recommendations);
         } else {
@@ -49,31 +49,31 @@ export default function GameDetails() {
       <Navbar />
 
       <main className="flex flex-col items-center w-full px-6 md:px-20 py-28">
-        {/* TITLE - Stylized with Red Glow */}
+        {/* the title*/}
         <h1 className="text-6xl valorant-font tracking-wide text-red-400 mb-4 text-center drop-shadow-[0_0_8px_#ff0000]">
           {displayName.toUpperCase()}
         </h1>
 
-        {/* SUBTITLE - Purple Glow */}
+        {/*subtitle */}
         <h2 className="text-4xl valorant-font tracking-wide text-[#B026FF] mb-12 drop-shadow-[0_0_10px_#B026FF]">
           RECOMMENDED GAMES
         </h2>
 
-        {/* LOADING STATE */}
+        {/*loading state */}
         {loading && (
           <p className="text-lg opacity-70 mt-8 animate-pulse valorant-font text-[#a05ac9]">
             FINDING YOUR GAME...
           </p>
         )}
 
-        {/* ERROR STATE */}
+        {/*for error */}
         {!loading && error && (
           <p className="text-lg opacity-80 text-red-400 bg-red-900/20 p-4 rounded-xl border border-red-500/50">
             {error}
           </p>
         )}
 
-        {/* RECOMMENDATION CARDS */}
+        {/*reccomendation cards after entering names */}
         {!loading && !error && recommended.length > 0 ? (
           <div className="flex flex-col gap-10 w-full max-w-5xl">
             {recommended.map((title, index) => {
@@ -120,4 +120,5 @@ export default function GameDetails() {
       <Footer />
     </div>
   );
+
 }
