@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+body {
+  width: 100dvw;
+  overflow-x: hidden;
+  background-color: #173e6f;
+  font-family: "General Sans", sans-serif;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    
+}
+
+@keyframes fadeInSlow {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeInSlow {
+  animation: fadeInSlow 2s ease-out forwards;
+}
+
+.animate-fadeInText {
+  animation: fadeInText 1.2s ease-out forwards;
+}
+
+
+.tech-font {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.2em;
+}
+
+
+@font-face {
+  font-family: "Valorant";
+  src: url("/Valorant.ttf") format("truetype");
+}
+
+.valorant-font {
+  font-family: "Valorant", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+::-webkit-scrollbar { display: none; } 
+html { scrollbar-width: none; } 
+
+
+
+.valo-glow {
+  box-shadow: 0 10px 40px rgba(255,0,76,0.25), 0 0 40px rgba(255,0,76,0.08) inset;
+}
+
+
+
+
+
+/*slitchy text effect */
+.glitch {
+  position: relative;
+  display: inline-block;
+  animation: glitch-skew 1.5s infinite linear alternate-reverse;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  background: transparent;
+  clip: rect(0, 0, 0, 0);
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff004c;
+  animation: glitch-1 1.4s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #074e55;
+  animation: glitch-2 1.3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-1 {
+  0% { clip: rect(12px, 9999px, 20px, 0); }
+  20% { clip: rect(4px, 9999px, 25px, 0); }
+  40% { clip: rect(18px, 9999px, 10px, 0); }
+  60% { clip: rect(8px, 9999px, 18px, 0); }
+  100% { clip: rect(14px, 9999px, 30px, 0); }
+}
+
+@keyframes glitch-2 {
+  0% { clip: rect(5px, 9999px, 14px, 0); }
+  20% { clip: rect(15px, 9999px, 8px, 0); }
+  40% { clip: rect(4px, 9999px, 22px, 0); }
+  60% { clip: rect(22px, 9999px, 12px, 0); }
+  100% { clip: rect(10px, 9999px, 25px, 0); }
+}
+
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  20% { transform: skew(2deg); }
+  40% { transform: skew(-2deg); }
+  60% { transform: skew(1deg); }
+  80% { transform: skew(-1deg); }
+  100% { transform: skew(0deg); }
+}
+
+
+
+/* rounded button for home and about*/
+
+.nav-btn {
+  position: relative;
+  padding: 8px 22px;
+  font-size: 14px;
+  color: white;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  transition: 0.25s ease;
+  overflow: hidden;
+}
+
+.nav-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255, 50, 80, 0.8), rgba(200, 200, 200, 0.3));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0.35;
+  transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.nav-btn:hover::before {
+  opacity: 0.7;
+}
+
+
+/* neony redy logoy framyyy*/
+
+.logo-frame {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255, 0, 0, 0.8);
+
+  box-shadow:
+    0 0 10px rgba(255, 0, 0, 0.9),
+    0 0 20px rgba(255, 0, 0, 0.8),
+    0 0 35px rgba(255, 0, 0, 0.7),
+    inset 0 0 10px rgba(255, 0, 0, 0.7);
+
+  transition: 0.25s ease;
+}
+
+.logo-frame:hover {
+  box-shadow:
+    0 0 15px rgba(255, 40, 40, 1),
+    0 0 30px rgba(255, 40, 40, 1),
+    0 0 45px rgba(255, 40, 40, 1),
+    inset 0 0 12px rgba(255, 80, 80, 1);
+  transform: scale(1.05);
+}
