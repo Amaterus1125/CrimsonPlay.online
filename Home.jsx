@@ -52,7 +52,7 @@ export default function Home() {
 
       <main className="relative z-[3] px-6 md:px-20 py-20 min-h-screen flex flex-col items-center">
 
-        {/* HOME TITLE CARD */}
+        {/* homey */}
         <div
           className="
             bg-[#0d111a]/40 
@@ -69,7 +69,7 @@ export default function Home() {
           </h1>
         </div>
 
-        {/* DESCRIPTION CARD */}
+        {/* description title */}
         <div
           className="
             max-w-3xl
@@ -90,10 +90,10 @@ export default function Home() {
           </p>
         </div>
 
-        {/* SEARCH SECTION */}
+        {/* search sections */}
         <div className="w-full max-w-2xl flex flex-col items-center mb-16 relative">
 
-          {/* SEARCH INPUT */}
+          {/* search input */}
           <div
             className="
               relative w-full rounded-2xl p-[3px] 
@@ -121,7 +121,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* LIVE SUGGESTIONS DROPDOWN */}
+          {/* live suggestion dropdown */}
           {filtered.length > 0 && (
             <ul
               className="
@@ -158,3 +158,4 @@ export default function Home() {
     </div>
   );
 }
+
