@@ -14,7 +14,7 @@ export default function About() {
   const smootherRef = useRef(null);
 
   useEffect(() => {
-    // PRESERVED: ScrollSmoother setup
+    // scroll smotherrr
     smootherRef.current = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
@@ -22,7 +22,7 @@ export default function About() {
       effects: true,
     });
 
-    // PRESERVED: Text animation logic
+    // text animation
     textRefs.current.forEach((el, i) => {
       if (!el) return;
       gsap.fromTo(
@@ -53,7 +53,7 @@ export default function About() {
       });
     });
 
-    // PRESERVED: Image animation logic
+    // image animation
     imageRefs.current.forEach((el, i) => {
       if (!el) return;
       gsap.fromTo(
@@ -83,7 +83,7 @@ export default function About() {
       });
     });
 
-    // PRESERVED: Section reveal logic
+    // section reveal logic
     sectionRefs.current.forEach((sec) => {
       if (!sec) return;
       gsap.fromTo(
@@ -108,7 +108,7 @@ export default function About() {
       <div id="smooth-content">
         <Navbar />
 
-        {/* PRESERVED: Background video with your exact filters */}
+        {/*background video */}
         <video
           src="/pagebg.mp4"
           autoPlay
@@ -120,10 +120,10 @@ export default function About() {
 
         <div className="absolute top-0 left-0 w-full h-full bg-[#090d14]/40 z-[2]" />
 
-        {/* MOBILE UPDATE: Changed p-20 to px-6 on mobile */}
+        {/* for mobile*/}
         <main className="relative z-[3] px-6 py-20 md:p-20 text-white valorant-font space-y-20 md:space-y-22">
           
-          {/* MOBILE UPDATE: text-6xl to text-4xl on small screens */}
+          {/* for mobile */}
           <h1 className="text-4xl md:text-6xl font-bold text-center text-[#ff004c] mb-10">
             THE NEXUS TEAM
           </h1>
@@ -153,7 +153,7 @@ export default function About() {
                   index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
               >
-                {/* MOBILE UPDATE: w-[700px] to w-full on mobile */}
+                {/*some more mobile update */}
                 <div
                   ref={(el) => (textRefs.current[index] = el)}
                   className="w-full lg:w-[700px] min-h-[260px] rounded-3xl bg-white/5 backdrop-blur-xl p-6 md:p-10 border border-[#ff004c] shadow-[0_0_25px_#ff004c80]"
@@ -162,7 +162,6 @@ export default function About() {
                   <p className="text-sm md:text-base opacity-80 leading-relaxed">{item.text}</p>
                 </div>
 
-                {/* MOBILE UPDATE: w-[280px] to w-[220px] on mobile */}
                 <div
                   ref={(el) => (imageRefs.current[index] = el)}
                   className="w-[220px] h-[320px] md:w-[280px] md:h-[400px] rounded-3xl overflow-hidden border border-[#ff004c] shadow-[0_0_30px_#ff004caa]"
@@ -182,4 +181,5 @@ export default function About() {
       </div>
     </div>
   );
+
 }
