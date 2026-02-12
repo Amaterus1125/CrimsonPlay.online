@@ -130,7 +130,7 @@ export default function About() {
 
           <p className="opacity-90 text-lg md:text-xl max-w-3xl mx-auto text-center leading-relaxed mb-12 md:mb-20 text-[#00f3ff] font-bold">
             We combine advanced design, great storytelling, and deep understanding of
-            players to build immersive gaming enhancement tools.
+            players to build immersive gaming enhancing tools which will take the users to next level.
           </p>
 
           <div className="space-y-32 md:space-y-52">
@@ -183,3 +183,4 @@ export default function About() {
   );
 
 }
+
