@@ -2,7 +2,7 @@
 
 CrimsonPlay is an AI-powered game recommendation engine that delivers accurate and relevant game suggestions based on user input.
 The platform analyzes similarity using models accessed through the Hugging Face Inference API and returns a curated list of **five related games**. Each recommended title links directly to its SteamDB page for deeper exploration and statistics.
-
+---
 ## Overview
 CrimsonPlay focuses on fast, intelligent, and minimal recommendation delivery.
 The system flow:
@@ -12,7 +12,7 @@ The system flow:
 3. The backend processes similarity using AI models.
 4. The API returns five highly relevant game recommendations.
 5. Clicking a recommendation redirects the user to its SteamDB page.
-
+---
 ## Technology Stack -- 
 ### Backend (Hosted on Hugging Face)
 
@@ -31,7 +31,7 @@ The backend is deployed separately using a Dockerfile inside the Hugging Face Sp
 * GSAP (animation engine)
 * CSS3
 
-
+---
 ## Local Development
 
 Clone the repository:
