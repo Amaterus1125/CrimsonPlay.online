@@ -1,16 +1,129 @@
-# React + Vite
+@ CrimsonPlay -- 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CrimsonPlay is an AI-powered game recommendation engine that delivers accurate and relevant game suggestions based on user input.
+The platform analyzes similarity using models accessed through the Hugging Face Inference API and returns a curated list of **five related games**. Each recommended title links directly to its SteamDB page for deeper exploration and statistics.
 
-Currently, two official plugins are available:
+## Overview
+CrimsonPlay focuses on fast, intelligent, and minimal recommendation delivery.
+The system flow:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. User enters a game title.
+2. The React frontend sends a request to a FastAPI backend hosted on Hugging Face.
+3. The backend processes similarity using AI models.
+4. The API returns five highly relevant game recommendations.
+5. Clicking a recommendation redirects the user to its SteamDB page.
 
-## React Compiler
+## Technology Stack -- 
+### Backend (Hosted on Hugging Face)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* FastAPI
+* Docker (containerized deployment)
+* Hugging Face Inference API
 
-## Expanding the ESLint configuration
+The backend is deployed separately using a Dockerfile inside the Hugging Face Spaces environment and is not included in this repository.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+
+* React
+* React Router
+* HTML5
+* TailwindCSS
+* GSAP (animation engine)
+* CSS3
+
+
+## Local Development
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/crimsonplay.git
+cd crimsonplay
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+The application runs locally at:
+
+```
+http://localhost:5173
+```
+
+---
+
+## API Integration
+
+The frontend communicates with the hosted backend endpoint:
+
+```
+https://your-huggingface-space-url.hf.space/recommend
+```
+
+### Example Request
+
+```json
+{
+  "game": "Valorant"
+}
+```
+
+### Example Response
+
+```json
+{
+  "recommendations": [
+    "CS:GO",
+    "Apex Legends",
+    "Overwatch 2",
+    "Rainbow Six Siege",
+    "Call of Duty"
+  ]
+}
+```
+
+---
+
+## Features
+
+* AI-powered similarity detection
+* Exactly five curated recommendations per query
+* Direct SteamDB redirection
+* Smooth UI transitions using GSAP
+* Responsive layout with TailwindCSS
+* Docker-based backend deployment on Hugging Face
+
+---
+
+## Deployment
+
+Frontend can be deployed on:
+
+* Vercel
+* Netlify
+* Any static hosting provider
+
+Backend is deployed separately through Hugging Face Spaces using Docker.
+
+---
+
+## Live Website
+
+[https://crimsonplay.online](https://crimsonplay.online)
+
+---
+
+## License
+
+MIT License
+
+---
