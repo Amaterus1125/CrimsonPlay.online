@@ -1,4 +1,4 @@
-@ CrimsonPlay -- 
+# CrimsonPlay -- 
 
 CrimsonPlay is an AI-powered game recommendation engine that delivers accurate and relevant game suggestions based on user input.
 The platform analyzes similarity using models accessed through the Hugging Face Inference API and returns a curated list of **five related games**. Each recommended title links directly to its SteamDB page for deeper exploration and statistics.
@@ -73,7 +73,7 @@ https://your-huggingface-space-url.hf.space/recommend
 
 ```json
 {
-  "game": "Valorant"
+  "game": "Call of Duty"
 }
 ```
 
@@ -86,7 +86,7 @@ https://your-huggingface-space-url.hf.space/recommend
     "Apex Legends",
     "Overwatch 2",
     "Rainbow Six Siege",
-    "Call of Duty"
+    "Call of Duty : Black Ops"
   ]
 }
 ```
